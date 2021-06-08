@@ -1,1 +1,1 @@
-export * from "./SomeModule";
+export * from "./some-module";
