@@ -1,5 +1,6 @@
 import React from "react";
+import "./some-style.scss";
 
 export const SomeModule: React.FC = () => {
-    return <>This is a react component!</>;
+    return <div className={"some-class"}>This is a react component!</div>;
 };
