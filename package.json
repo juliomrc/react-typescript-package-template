@@ -1,0 +1,41 @@
+{
+  "name": "react-typescript-package-template",
+  "version": "1.0.0",
+  "description": "Template to write and test a react & typescript package",
+  "keywords": [
+    "react",
+    "typescript",
+    "package"
+  ],
+  "author": "Julio Cordeiro",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliomrc/react-typescript-package-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juliomrc/react-typescript-package-template/issues"
+  },
+  "homepage": "https://github.com/juliomrc/react-typescript-package-template#readme",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "build": "rimraf dist && tsc"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.9",
+    "react": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  }
+}
