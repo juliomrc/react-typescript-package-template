@@ -11,7 +11,7 @@ Template to write, test and publish a `react` &amp; `typescript` package in thre
 After cloning the repo:
 
 ```
-npm run prepare
+npm i
 ```
 
 Start examples website:
