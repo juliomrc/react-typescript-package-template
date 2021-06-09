@@ -1,8 +1,10 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const getJsTsLoaders = (isHotDevelopment) => {
-    const jsTsLoaders = [
-        {
+    return {
+        test: /\.(js|ts(x?))$/,
+        exclude: /node_modules/,
+        use: {
             loader: "babel-loader",
             options: {
                 plugins: [isHotDevelopment && "react-refresh/babel"].filter(
@@ -10,12 +12,6 @@ const getJsTsLoaders = (isHotDevelopment) => {
                 ),
             },
         },
-    ];
-
-    return {
-        test: /\.(js|ts(x?))$/,
-        exclude: /node_modules/,
-        use: jsTsLoaders,
     };
 };
 
