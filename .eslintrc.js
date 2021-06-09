@@ -20,7 +20,22 @@ module.exports = {
         sourceType: "module",
     },
     plugins: ["react", "@typescript-eslint"],
+    settings: {
+        react: { version: "detect" },
+    },
+    ignorePatterns: ["*.d.ts", "./node_modules", "./lib", "./dist"],
     rules: {
+        semi: ["error", "always"],
         quotes: ["error", "double"],
+        "@typescript-eslint/interface-name-prefix": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "react/prop-types": "off",
+        "react/no-unescaped-entities": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                endOfLine: "auto",
+            },
+        ],
     },
 };
