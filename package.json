@@ -9,13 +9,13 @@
     ],
     "author": "Julio Cordeiro",
     "license": "MIT",
-    "main": "index.js",
-    "module": "index.js",
-    "types": "index.d.ts",
+    "main": "./lib/cjs/index.js",
+    "module": "./lib/esm/index.js",
+    "types": "./lib/esm/index.d.ts",
     "sideEffects": false,
     "files": [
-        "src",
-        "dist"
+        "/lib",
+        "/src"
     ],
     "repository": {
         "type": "git",
@@ -26,14 +26,16 @@
     },
     "homepage": "https://github.com/juliomrc/react-typescript-package-template#readme",
     "scripts": {
+        "prepare": "npm i && husky install",
         "start-dev": "webpack serve --hot --env dev",
-        "clean-dist": "rimraf examples-dist && rimraf dist",
-        "test": "jest",
+        "clean-dist": "rimraf examples-dist",
         "type-check": "tsc --noEmit",
+        "test": "jest",
         "build-dev": "npm-run-all -p clean-dist test type-check & webpack --env dev",
         "build-prd": "npm-run-all -p clean-dist test type-check & webpack",
-        "build-package": "npm run clean-dist test && tsc",
-        "prepare": "husky install"
+        "clean-lib": "rimraf lib",
+        "build-package": "npm run clean-lib && npm run test && tsc -p tsconfig-esm.json && tsc -p tsconfig-cjs.json && pkgfiles",
+        "publish": "npm run build-package && git push --tags && npm publish"
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
@@ -66,6 +68,7 @@
         "lint-staged": "^11.0.0",
         "mini-css-extract-plugin": "^1.6.0",
         "npm-run-all": "^4.1.5",
+        "pkgfiles": "^2.3.2",
         "prettier": "^2.3.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
@@ -84,7 +87,8 @@
         "webpack-dev-server": "^3.11.2"
     },
     "peerDependencies": {
-        "react": ">=16.8.0"
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0"
     },
     "dependencies": {}
 }
