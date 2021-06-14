@@ -1,9 +1,19 @@
-orbs:
-    node: circleci/node@4.2.1
-
 version: 2.1
-
+orbs:
+    node: circleci/node@4.5.0
+jobs:
+    test:
+        executor:
+            name: node/default
+            tag: "13.14"
+        steps:
+            - checkout
+            - node/install-packages:
+                  cache-path: ~/project/node_modules
+                  override-ci-command: npm install --dry-run
+            - run:
+                  command: npm run test
 workflows:
-    app-tests:
+    test_my_app:
         jobs:
-            - node/test
+            - test
