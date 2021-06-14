@@ -15,11 +15,11 @@ jobs:
                   command: npm run type-check
             - run:
                   command: npm run test
-            - store_test_results:
+            - store_artifacts:
                   path: .tests/coverage
             - codecov/upload:
                   file: .tests/coverage/lcov-report/index.html
-                  token: "e1bae58d-1058-4f6a-b0ff-69e9759eacf7"
+                  token: e1bae58d-1058-4f6a-b0ff-69e9759eacf7
 
 workflows:
     test_package:
