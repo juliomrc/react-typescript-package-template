@@ -17,9 +17,7 @@ jobs:
                   command: npm run test
             - store_artifacts:
                   path: .tests/coverage
-            - codecov/upload:
-                  file: .tests/coverage/lcov-report/lcov.info
-                  token: ${CODECOV_TEMPLATE_TOKEN}
+            - codecov/upload
 
 workflows:
     test_package:
