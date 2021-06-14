@@ -1,8 +1,6 @@
 version: 2.1
 orbs:
     node: circleci/node@4.5.0
-    install-npm:
-        version: 6.4.10
 jobs:
     test:
         executor:
