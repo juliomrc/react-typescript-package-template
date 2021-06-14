@@ -18,8 +18,8 @@ jobs:
             - store_artifacts:
                   path: .tests/coverage
             - codecov/upload:
-                  file: .tests/coverage/lcov-report/index.html
-                  token: e1bae58d-1058-4f6a-b0ff-69e9759eacf7
+                  file: .tests/coverage/lcov-report/lcov.info
+                  token: ${CODECOV_TEMPLATE_TOKEN}
 
 workflows:
     test_package:
