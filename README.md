@@ -1,5 +1,23 @@
 # react-typescript-package-template
 
+<p align="center">
+    <a href="https://github.com/juliomrc/react-typescript-package-template/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/juliomrc/react-typescript-package-template" alt="MIT license">
+    </a>
+    <a href="https://www.npmjs.com/package/react-typescript-package-template">
+        <img src="https://img.shields.io/bundlephobia/min/react-typescript-package-template" alt="npm size">
+    </a><a href="https://www.npmjs.com/package/react-typescript-package-template">
+        <img src="https://img.shields.io/npm/v/react-typescript-package-template" alt="npm version">
+    </a>
+       </a><a href="https://app.circleci.com/pipelines/github/juliomrc/react-typescript-package-template">
+        <img src="https://img.shields.io/circleci/build/github/juliomrc/react-typescript-package-template" alt="build status">
+    </a>
+    </a>
+       </a><a href="https://app.codecov.io/gh/juliomrc/react-typescript-package-template/">
+        <img src="https://img.shields.io/codecov/c/github/juliomrc/react-typescript-package-template" alt="test coverage">
+    </a>
+</p>
+
 Template to write, test and publish a `react` &amp; `typescript` package in three easy steps:
 
 1. Create a new repo based on this template;
@@ -58,6 +76,7 @@ npm run publish
         -   `sass` + `css-modules` + `typings for css`;
         -   `eslint` and `stylelint` integration on prd build;
         -   `webpack-bundle-analyser`.
+-   Circle CI configuration to check the build, the tests and upload them to codecov
 
 > _Note:_ This template does not support packages with styles yet. Although you can use styles and css modules in the examples, .css/scss/sass/less/... files are not processed by `tsc` and will not be included in the final package.
 
