@@ -8,8 +8,9 @@ jobs:
             - checkout
             - node/install-packages:
                   cache-path: ~/project/node_modules
-                  override-ci-command: npm install --also=dev --dry-run
-            - run: npm run build-package
+                  override-ci-command: npm install --dry-run
+            - run: npm run type-check
+            - run: npm run test
 workflows:
     run-build:
         jobs:
