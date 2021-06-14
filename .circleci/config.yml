@@ -5,14 +5,13 @@ jobs:
     test:
         executor:
             name: node/default
-            tag: "13.14"
         steps:
             - checkout
             - node/install-packages:
-                  cache-path: ~/project/node_modules
-                  override-ci-command: npm install --dry-run
+                  override-ci-command: npm ci --dry-run
             - run:
                   command: npm run test
+
 workflows:
     test_my_app:
         jobs:
