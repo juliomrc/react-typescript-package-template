@@ -1,13 +1,9 @@
-version: 2
-jobs:
-    build:
-        docker:
-            - image: circleci/node:10.0-browsers
-        steps:
-            - checkout
-            - run: npm install
-            - run:
-                  name: "Run Jest and Collect Coverage Reports"
-                  command: jest
-            - store_artifacts:
-                  path: .tests/coverage
+orbs:
+    node: circleci/node@4.2.1
+
+version: 2.1
+
+workflows:
+    app-tests:
+        jobs:
+            - node/test
