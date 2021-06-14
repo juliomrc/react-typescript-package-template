@@ -28,6 +28,7 @@
     "scripts": {
         "prepare": "husky install && npm i -g np",
         "start-dev": "webpack serve --hot --env dev",
+        "rimraf": "./node_modules/rimraf/bin.js",
         "clean-dist": "rimraf examples-dist",
         "type-check": "tsc --noEmit",
         "test": "jest",
